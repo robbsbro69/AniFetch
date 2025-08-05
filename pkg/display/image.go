@@ -82,7 +82,8 @@ func (id *ImageDisplay) tryChafa(imagePath string) bool {
 		"--size", sizeStr,
 		"--symbols", "block",
 		"--colors", "256",
-		"--dither", "ordered",
+		"--dither", "none",
+		"--color-space", "rgb",
 		imagePath)
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
@@ -107,10 +108,11 @@ func (id *ImageDisplay) tryChafa(imagePath string) bool {
 	
 	// Fallback to character-based size for terminals that don't support pixel size
 	cmd = exec.Command("chafa", 
-		"--size", "50",
+		"--size", "30",
 		"--symbols", "block",
 		"--colors", "256",
-		"--dither", "ordered",
+		"--dither", "none",
+		"--color-space", "rgb",
 		imagePath)
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
@@ -121,10 +123,11 @@ func (id *ImageDisplay) tryChafa(imagePath string) bool {
 	
 	// Final fallback with smaller size
 	cmd = exec.Command("chafa", 
-		"--size", "30",
+		"--size", "20",
 		"--symbols", "block",
 		"--colors", "256",
-		"--dither", "ordered",
+		"--dither", "none",
+		"--color-space", "rgb",
 		imagePath)
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
