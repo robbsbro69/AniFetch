@@ -15,18 +15,49 @@ A neofetch-like system information tool that displays anime girls holding progra
 - Caches images locally for faster runs
 - Cross-platform support (Linux, macOS, Windows)
 
+## Prerequisites
+
+**Required:**
+- Go 1.21 or later
+
+**Optional (for best image quality):**
+- chafa (terminal image viewer)
+
 ## Quick Start
+
+### 1. Install Go (if not installed)
+
+**Ubuntu/Debian:**
+```bash
+sudo apt update
+sudo apt install golang-go
+```
+
+**Arch Linux:**
+```bash
+sudo pacman -S go
+```
+
+**macOS:**
+```bash
+brew install go
+```
+
+### 2. Install chafa (optional but recommended)
+
+```bash
+sudo pacman -S chafa  # Arch
+sudo apt install chafa # Ubuntu/Debian
+brew install chafa     # macOS
+```
+
+### 3. Build and Install AniFetch
 
 ```bash
 # Clone and build
 git clone https://github.com/robbsbro69/AniFetch.git
 cd AniFetch
 go build -o anifetch main.go
-
-# Install chafa for best image quality
-sudo pacman -S chafa  # Arch
-sudo apt install chafa # Ubuntu/Debian
-brew install chafa     # macOS
 
 # Run locally
 ./anifetch
