@@ -70,6 +70,23 @@ chmod +x install.sh
 # Choose 'y' when prompted to install globally
 
 # Now you can run 'anifetch' from anywhere!
+
+## Updating AniFetch
+
+When new features are added, update your installation:
+
+```bash
+# Update existing installation
+cd ~/AniFetch
+git pull origin main
+go build -o anifetch main.go
+sudo cp anifetch /usr/local/bin/
+
+# OR fresh install
+rm -rf ~/AniFetch
+git clone https://github.com/robbsbro69/AniFetch.git
+cd AniFetch
+./install.sh
 ```
 
 ## Usage
