@@ -20,7 +20,7 @@ A neofetch-like system information tool that displays anime girls holding progra
 ```bash
 # Clone and build
 git clone https://github.com/robbsbro69/AniFetch.git
-cd anifetch
+cd AniFetch
 go build -o anifetch main.go
 
 # Install chafa for best image quality
@@ -28,13 +28,29 @@ sudo pacman -S chafa  # Arch
 sudo apt install chafa # Ubuntu/Debian
 brew install chafa     # macOS
 
-# Run
+# Run locally
 ./anifetch
+
+# OR install globally (recommended)
+chmod +x install.sh
+./install.sh
+# Choose 'y' when prompted to install globally
+
+# Now you can run 'anifetch' from anywhere!
 ```
 
 ## Usage
 
 ```bash
+# If installed globally (recommended)
+anifetch                      # Run with image
+anifetch --no-image          # Disable image display
+anifetch --show-cache        # Show cached images
+anifetch --clear-cache       # Clear cached images
+anifetch --check-token       # Check GitHub token status
+anifetch --size 40x20        # Set custom image size
+
+# If running locally
 ./anifetch                    # Run with image
 ./anifetch --no-image        # Disable image display
 ./anifetch --show-cache      # Show cached images
