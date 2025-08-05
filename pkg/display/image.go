@@ -13,7 +13,7 @@ type ImageDisplay struct{
 }
 
 func NewImageDisplay() *ImageDisplay {
-	return &ImageDisplay{size: "20x10"}
+	return &ImageDisplay{size: "15x8"}
 }
 
 func NewImageDisplayWithSize(size string) *ImageDisplay {
@@ -58,21 +58,21 @@ func (id *ImageDisplay) tryChafa(imagePath string) bool {
 	}
 
 	// Calculate display size with padding (leave space for system info)
-	// Reduce to half size for better fit
-	displayWidth := (width - 4) / 2
-	displayHeight := (height - 6) / 2
+	// Use more conservative sizing for better fit
+	displayWidth := (width - 4) / 3  // Even smaller - 1/3 of terminal width
+	displayHeight := (height - 6) / 3 // Even smaller - 1/3 of terminal height
 
 	// Ensure reasonable minimum and maximum sizes
-	if displayWidth < 15 {
-		displayWidth = 15
-	} else if displayWidth > 60 {
-		displayWidth = 60
+	if displayWidth < 12 {
+		displayWidth = 12
+	} else if displayWidth > 40 {
+		displayWidth = 40
 	}
 
-	if displayHeight < 8 {
-		displayHeight = 8
-	} else if displayHeight > 30 {
-		displayHeight = 30
+	if displayHeight < 6 {
+		displayHeight = 6
+	} else if displayHeight > 20 {
+		displayHeight = 20
 	}
 
 	sizeStr := fmt.Sprintf("%dx%d", displayWidth, displayHeight)
