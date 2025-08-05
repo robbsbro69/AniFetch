@@ -53,6 +53,8 @@ brew install chafa     # macOS
 
 **Note:** Without chafa, images will be blurry or show ASCII art instead.
 
+**Important:** Use the latest version of chafa for best compatibility. Older versions may cause blurry images or errors.
+
 ### 3. Build and Install AniFetch
 
 ```bash
@@ -117,7 +119,8 @@ export GITHUB_TOKEN="your_token_here"
 - **Rate limit errors?** Set up GitHub token or use cached images
 - **Image too big?** Use `--size 15x8` for smaller images
 - **Image too small?** Use `--size 60x30` for larger images
-- **Blurry images?** Make sure `chafa` is installed
+- **Blurry images?** Make sure `chafa` is installed and updated to latest version
+- **chafa errors?** Update to latest version: `sudo apt update && sudo apt install chafa`
 
 ## Acknowledgments
 
