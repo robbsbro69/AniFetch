@@ -1,0 +1,24 @@
+# Build artifacts
+anifetch
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Cache directory
+~/.anifetch/
+
+# Go specific
+*.test
+*.out
+go.work
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS specific
+.DS_Store
+Thumbs.db 
