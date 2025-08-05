@@ -58,21 +58,20 @@ func (id *ImageDisplay) tryChafa(imagePath string) bool {
 	}
 
 	// Calculate display size with padding (leave space for system info)
-	// Use more conservative sizing for better fit
-	displayWidth := (width - 4) / 3  // Even smaller - 1/3 of terminal width
-	displayHeight := (height - 6) / 3 // Even smaller - 1/3 of terminal height
+	displayWidth := (width - 4) / 2  // Half of terminal width
+	displayHeight := (height - 6) / 2 // Half of terminal height
 
 	// Ensure reasonable minimum and maximum sizes
-	if displayWidth < 12 {
-		displayWidth = 12
-	} else if displayWidth > 40 {
-		displayWidth = 40
+	if displayWidth < 20 {
+		displayWidth = 20
+	} else if displayWidth > 60 {
+		displayWidth = 60
 	}
 
-	if displayHeight < 6 {
-		displayHeight = 6
-	} else if displayHeight > 20 {
-		displayHeight = 20
+	if displayHeight < 10 {
+		displayHeight = 10
+	} else if displayHeight > 30 {
+		displayHeight = 30
 	}
 
 	sizeStr := fmt.Sprintf("%dx%d", displayWidth, displayHeight)
@@ -83,7 +82,6 @@ func (id *ImageDisplay) tryChafa(imagePath string) bool {
 		"--symbols", "block",
 		"--colors", "256",
 		"--dither", "none",
-		"--color-space", "rgb",
 		imagePath)
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
@@ -97,7 +95,7 @@ func (id *ImageDisplay) tryChafa(imagePath string) bool {
 		"--size", id.size,
 		"--symbols", "block",
 		"--colors", "256",
-		"--dither", "ordered",
+		"--dither", "none",
 		imagePath)
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
@@ -108,11 +106,10 @@ func (id *ImageDisplay) tryChafa(imagePath string) bool {
 	
 	// Fallback to character-based size for terminals that don't support pixel size
 	cmd = exec.Command("chafa", 
-		"--size", "30",
+		"--size", "40",
 		"--symbols", "block",
 		"--colors", "256",
 		"--dither", "none",
-		"--color-space", "rgb",
 		imagePath)
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
@@ -123,11 +120,10 @@ func (id *ImageDisplay) tryChafa(imagePath string) bool {
 	
 	// Final fallback with smaller size
 	cmd = exec.Command("chafa", 
-		"--size", "20",
+		"--size", "30",
 		"--symbols", "block",
 		"--colors", "256",
 		"--dither", "none",
-		"--color-space", "rgb",
 		imagePath)
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
