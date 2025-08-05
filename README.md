@@ -56,34 +56,6 @@ brew install chafa     # macOS
 ### 3. Build and Install AniFetch
 
 ```bash
-# Clone and build
-git clone https://github.com/robbsbro69/AniFetch.git
-cd AniFetch
-go build -o anifetch main.go
-
-# Run locally
-./anifetch
-
-# OR install globally (recommended)
-chmod +x install.sh
-./install.sh
-# Choose 'y' when prompted to install globally
-
-# Now you can run 'anifetch' from anywhere!
-
-## Updating AniFetch
-
-When new features are added, update your installation:
-
-```bash
-# Update existing installation
-cd ~/AniFetch
-git pull origin main
-go build -o anifetch main.go
-sudo cp anifetch /usr/local/bin/
-
-# OR fresh install
-rm -rf ~/AniFetch
 git clone https://github.com/robbsbro69/AniFetch.git
 cd AniFetch
 ./install.sh
@@ -111,6 +83,24 @@ anifetch --size 60x30        # Large image
 ./anifetch --size 15x8       # Small image (recommended)
 ./anifetch --size 30x15      # Medium image
 ./anifetch --size 60x30      # Large image
+```
+
+## Updating AniFetch
+
+When new features are added, update your installation:
+
+```bash
+# Update existing installation
+cd ~/AniFetch
+git pull origin main
+go build -o anifetch main.go
+sudo cp anifetch /usr/local/bin/
+
+# OR fresh install
+rm -rf ~/AniFetch
+git clone https://github.com/robbsbro69/AniFetch.git
+cd AniFetch
+./install.sh
 ```
 
 ## GitHub Token (Optional)
