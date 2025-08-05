@@ -2,9 +2,8 @@
 
 A neofetch-like system information tool that displays anime girls holding programming books instead of the traditional OS logo.
 
-![AniFetch Example](https://github.com/robbsbro69/AniFetch/assets/your-user-id/anifetch-example.png)
-
-*AniFetch displaying system information with a random anime girl holding programming books*
+<!-- Screenshot will be added here -->
+<!-- TODO: Add screenshot showing AniFetch output with anime girl and system info -->
 
 ## Features
 
@@ -65,4 +64,4 @@ export GITHUB_TOKEN="your_token_here"
 
 ## License
 
-MIT License
+[MIT License](LICENSE)
