@@ -159,22 +159,19 @@ func (id *ImageDisplay) tryKittyIcat(imagePath string) bool {
 }
 
 func (id *ImageDisplay) tryTerminalProtocols(imagePath string) bool {
-	term := os.Getenv("TERM")
-	
-	switch term {
-	case "xterm-kitty":
-		// Kitty terminal image protocol
-		fmt.Printf("\033]1337;File=inline=1;preserveAspectRatio=1:%s\007", imagePath)
-		return true
-	case "xterm-256color", "screen-256color":
-		// Try iTerm2 image protocol
-		fmt.Printf("\033]1337;File=inline=1;preserveAspectRatio=1:%s\007", imagePath)
-		return true
-	default:
-		// Try generic image protocol
-		fmt.Printf("\033]1337;File=inline=1;preserveAspectRatio=1:%s\007", imagePath)
-		return true
-	}
+	// Instead of trying terminal protocols that often don't work well,
+	// show a nice ASCII art fallback
+	fmt.Println("╭─────────────────────────╮")
+	fmt.Println("│      (◕‿◕)            │")
+	fmt.Println("│       /|\\             │")
+	fmt.Println("│      / \\              │")
+	fmt.Println("│                        │")
+	fmt.Println("│  Holding a Programming │")
+	fmt.Println("│      Book! 📚          │")
+	fmt.Println("│                        │")
+	fmt.Println("│  🎀 Anime Girl 🎀      │")
+	fmt.Println("╰─────────────────────────╯")
+	return true
 }
 
 func (id *ImageDisplay) GetSupportedTools() []string {

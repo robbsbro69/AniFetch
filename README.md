@@ -20,8 +20,8 @@ A neofetch-like system information tool that displays anime girls holding progra
 **Required:**
 - Go 1.21 or later
 
-**Optional (for best image quality):**
-- chafa (terminal image viewer)
+**Highly Recommended (for best image quality):**
+- chafa (terminal image viewer) - Without this, images will be blurry or show ASCII art
 
 ## Quick Start
 
@@ -43,13 +43,15 @@ sudo pacman -S go
 brew install go
 ```
 
-### 2. Install chafa (optional but recommended)
+### 2. Install chafa (highly recommended for best quality)
 
 ```bash
 sudo pacman -S chafa  # Arch
 sudo apt install chafa # Ubuntu/Debian
 brew install chafa     # macOS
 ```
+
+**Note:** Without chafa, images will be blurry or show ASCII art instead.
 
 ### 3. Build and Install AniFetch
 
@@ -79,7 +81,9 @@ anifetch --no-image          # Disable image display
 anifetch --show-cache        # Show cached images
 anifetch --clear-cache       # Clear cached images
 anifetch --check-token       # Check GitHub token status
-anifetch --size 40x20        # Set custom image size
+anifetch --size 15x8         # Small image (recommended)
+anifetch --size 30x15        # Medium image
+anifetch --size 60x30        # Large image
 
 # If running locally
 ./anifetch                    # Run with image
@@ -87,7 +91,9 @@ anifetch --size 40x20        # Set custom image size
 ./anifetch --show-cache      # Show cached images
 ./anifetch --clear-cache     # Clear cached images
 ./anifetch --check-token     # Check GitHub token status
-./anifetch --size 40x20      # Set custom image size
+./anifetch --size 15x8       # Small image (recommended)
+./anifetch --size 30x15      # Medium image
+./anifetch --size 60x30      # Large image
 ```
 
 ## GitHub Token (Optional)
@@ -102,7 +108,9 @@ export GITHUB_TOKEN="your_token_here"
 
 - **Images not showing?** Install `chafa` or try `--no-image`
 - **Rate limit errors?** Set up GitHub token or use cached images
-- **Wrong size?** Use `--size` to customize dimensions
+- **Image too big?** Use `--size 15x8` for smaller images
+- **Image too small?** Use `--size 60x30` for larger images
+- **Blurry images?** Make sure `chafa` is installed
 
 ## Acknowledgments
 
